@@ -1,0 +1,29 @@
+@import "../../../../../variables";
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: $background-color; // from SCSS variables
+  display: flex;
+  flex-direction: column;
+  gap: 1.875rem;
+  color: $body-font-color;
+  .logo {
+    padding: 30px;
+  }
+  ul {
+    display: flex;
+    flex-direction: column; // vertical list
+    gap: 1rem; // space between li elements
+    list-style: none; // optional
+    padding: 0; // optional
+    padding-left: 2.5rem;
+    li {
+      display: flex;
+      gap: 1.25rem;
+      a {
+        display: flex;
+        gap: 1.25rem;
+      }
+    }
+  }
+}

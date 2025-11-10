@@ -1,0 +1,18 @@
+<nav class="sidebar">
+  <div class="logo">
+    <span><img src="assets/logo-dark.svg" alt="" /></span>
+  </div>
+  <span>ALL BOARDS ({{ boards.length }})</span>
+  <ul>
+    <li *ngFor="let board of boards; let i = index">
+      <a href=""
+        ><img src="assets/icon-board.svg" alt="" />
+        <span>{{ board.name }}</span></a
+      >
+    </li>
+    <li>
+      <img src="assets/icon-board.svg" alt="" />
+      <span> + Create New Board </span>
+    </li>
+  </ul>
+</nav>

@@ -1,1 +1,20 @@
-<app-sidebar></app-sidebar>
+<div class="main-screen">
+  <app-sidebar
+    [boards]="boards()"
+    (boardClicked)="getClickedBoard($event)"
+  ></app-sidebar>
+
+  <div class="main-content">
+    <div class="header-section">
+      <h1>
+        {{
+          clickedBoard.name != undefined ? clickedBoard.name : boards()[0].name
+        }}
+      </h1>
+      <button type="button" class="add-item-btn">+ Add New Task</button>
+    </div>
+    <div class="content-area">
+      <app-tasks-board></app-tasks-board>
+    </div>
+  </div>
+</div>

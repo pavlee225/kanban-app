@@ -1,0 +1,35 @@
+@import "../../../../../variables";
+.main-screen {
+  display: flex;
+}
+.header-section {
+  width: 100%;
+  height: 97px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem;
+}
+.add-item-btn {
+  background-color: $primary-color;
+  border-radius: $button-border-radius;
+  padding: 0.8125rem;
+  color: white;
+  font-weight: $button-font-weight;
+}
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  .header {
+    height: 60px; // or whatever your Figma design says
+    border-bottom: 1px solid #ddd;
+  }
+
+  .content-area {
+    flex: 1;
+    padding: 1rem;
+    background-color: $background-grey-color;
+  }
+}

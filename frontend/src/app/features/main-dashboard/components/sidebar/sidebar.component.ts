@@ -1,7 +1,6 @@
-import { Component, inject } from '@angular/core';
-import { BoardService } from '../../../boards/services/board.service';
-import { Board } from '../../../boards/models/board.model';
+import { Component, EventEmitter, input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Board } from '../../../boards/models/board.model';
 
 @Component({
   selector: 'app-sidebar',
@@ -11,19 +10,10 @@ import { CommonModule } from '@angular/common';
   styleUrl: './sidebar.component.scss',
 })
 export class SidebarComponent {
-  private boardService = inject(BoardService);
+  @Output() boardClicked = new EventEmitter();
+  boards = input<Board[]>([]);
 
-  boards: Board[] = [];
-
-  ngOnInit() {
-    this.boardService.getBoards().subscribe({
-      next: (response) => {
-        console.log(response);
-        this.boards = response;
-      },
-      error: (error) => {
-        console.error('Error fetching boards:', error);
-      },
-    });
+  selectBoard(board: Board) {
+    this.boardClicked.emit(board);
   }
 }

@@ -17,13 +17,37 @@
     list-style: none; // optional
     padding: 0; // optional
     padding-left: 2.5rem;
+    img {
+      max-width: 1rem;
+      max-height: 1rem;
+      color: $primary-color;
+    }
     li {
       display: flex;
       gap: 1.25rem;
-      a {
-        display: flex;
-        gap: 1.25rem;
-      }
+      cursor: pointer;
+      font-size: $heading-m-font-size;
+      font-weight: $heading-font-weight;
+      align-items: center;
+    }
+    li svg {
+      color: $primary-color;
+      width: 16px;
+      height: 16px;
+      margin-right: 0.5rem;
+    }
+
+    li:hover svg {
+      color: $secondary-color;
     }
   }
+}
+.title-name {
+  padding: 0 3rem;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 2.4px;
+}
+.create-task-btn {
+  color: $primary-color;
 }

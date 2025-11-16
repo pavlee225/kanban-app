@@ -17,12 +17,16 @@ export class MainDashboardComponent {
   boards = signal<Board[]>([]);
 
   clickedBoard: Board = <Board>{};
+  showSidebar = true;
 
   ngOnInit() {
     this.boardService.getBoards().subscribe({
       next: (response) => {
         console.log(response);
         this.boards.set(response);
+        if (response.length > 0) {
+        this.clickedBoard = response[0];
+      }
       },
       error: (error) => {
         console.error('Error fetching boards:', error);
@@ -32,5 +36,9 @@ export class MainDashboardComponent {
 
   getClickedBoard(board: Board) {
     this.clickedBoard = board;
+  }
+  toggleSidebar(event: any){
+    console.log("🚀 ~ MainDashboardComponent ~ toggleSidebar ~ event:", event);
+    this.showSidebar = event
   }
 }

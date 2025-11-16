@@ -2,17 +2,23 @@
   <div class="logo">
     <span><img src="assets/logo-dark.svg" alt="" /></span>
   </div>
-  <span>ALL BOARDS ({{ boards.length }})</span>
+  <div class="title-name">ALL BOARDS ({{ boards().length }})</div>
   <ul>
-    <li *ngFor="let board of boards; let i = index">
-      <a href=""
-        ><img src="assets/icon-board.svg" alt="" />
-        <span>{{ board.name }}</span></a
-      >
+    <li
+      *ngFor="let board of boards(); let i = index"
+      (click)="selectBoard(board)"
+    >
+      <img src="assets/icon-board.svg" alt="" />
+      <span>{{ board.name }}</span>
     </li>
     <li>
       <img src="assets/icon-board.svg" alt="" />
-      <span> + Create New Board </span>
+      <span class="create-task-btn"> + Create New Board </span>
     </li>
   </ul>
+  <div class="hide-show-bar">
+    <img src="../../../../../assets/icon-hide-sidebar.svg" />
+
+    <button type="button" (click)="toggleSidebar()">Hide Sidebar</button>
+  </div>
 </nav>

@@ -1,1 +1,33 @@
-<app-sidebar></app-sidebar>
+<div class="main-screen">
+  @if(showSidebar){
+  <app-sidebar
+    [boards]="boards()"
+    (boardClicked)="getClickedBoard($event)"
+    (showSidebar)="toggleSidebar($event)"
+  ></app-sidebar
+  >}@else{
+  <img src="../../../../../assets/icon-show-sidebar.svg" />
+  }
+
+  <div class="main-content">
+    <div class="header-section">
+      <h1>
+        @if (clickedBoard) {
+        {{ clickedBoard.name }}
+        } @else if (boards().length > 0) {
+        {{ boards()[0].name }}
+        } @else { Loading... }
+      </h1>
+      <div class="add-task-menu">
+        <button type="button" class="add-item-btn">+ Add New Task</button>
+        <img
+          src="../../../../../assets/icon-vertical-ellipsis.svg"
+          style="height: 20px"
+        />
+      </div>
+    </div>
+    <div class="content-area">
+      <app-tasks-board></app-tasks-board>
+    </div>
+  </div>
+</div>

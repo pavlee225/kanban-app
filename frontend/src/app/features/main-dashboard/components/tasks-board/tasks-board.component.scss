@@ -1,1 +1,10 @@
 @import "../../../../../variables";
+
+
+.create-column-btn {
+    border-radius: $button-border-radius;
+    background-color: $primary-color;
+    color:white;
+    font-size: $button-font-size-m;
+    padding: 10px;
+}

@@ -33,3 +33,8 @@
     background-color: $background-grey-color;
   }
 }
+.add-task-menu {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
